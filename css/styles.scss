@@ -1,0 +1,89 @@
+/* Colors */
+$pink_primary: hsl(322, 100%, 66%);
+$very_pale_cyan: hsl(193, 100%, 96%);
+$very_dark_cyan: hsl(192, 100%, 9%);
+$grayish_blue: hsl(208, 11%, 55%);
+$transparent_grayish_blue: hsla(209, 11%, 55%, 0.24);
+
+/* Fonts */
+$font_size: 18px;
+$sans_font: sans-serif;
+$sans_weight: 600;
+$poppins_font: "Poppins";
+$poppins_light_weight: 400;
+$poppins_heavy_weight: 700;
+
+/* Margins */
+$margin_1: 0px;
+$margin_2: 10px;
+$margin_3: 20px;
+$margin_4: 30px;
+$margin_5: 40px;
+
+/* Paddings */
+$padding_1: 0px;
+$padding_2: 10px;
+$padding_3: 20px;
+$padding_4: 30px;
+$padding_5: 40px;
+$padding_6: 50px;
+
+/* Borders */
+$border_0: 0px;
+$border_1: 5px;
+$border_2: 10px;
+$border_3: 15px;
+$border_4: 20px;
+
+$border_rounded_1: 0px;
+$border_rounded_2: 10px;
+$border_rounded_3: 20px;
+$border_rounded_4: 30px;
+$border_rounded_5: 40px;
+
+html {
+    font-family: $sans_font, $poppins_font;
+    font-size: $font_size;
+}
+
+body {
+    margin: $margin_1;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: $padding_3;
+}
+
+.huddle-icon {
+    padding-left: $padding_3;
+    object-fit: contain;
+}
+
+a:has(> .try-it-button) {
+    justify-self: flex-end;
+    margin-left: auto;
+}
+
+.try-it-button {
+    border-radius: $border_rounded_5;
+    padding: $padding_2 $padding_6;
+    margin-right: $padding_3;
+
+    font-family: $sans_font;
+    font-weight: $sans_weight;
+    color: $grayish_blue;
+    background-color: white;
+
+    border: $border_0;
+    border-color: $very_pale_cyan;
+    box-shadow: 0px 0px 5px $transparent_grayish_blue;
+}
+
+.main-section {
+    background-image: url("../img/bg-hero-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $very_pale_cyan;
+}

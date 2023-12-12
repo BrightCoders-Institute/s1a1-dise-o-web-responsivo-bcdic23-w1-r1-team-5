@@ -1,0 +1,50 @@
+/* Colors */
+/* Fonts */
+/* Margins */
+/* Paddings */
+/* Borders */
+html {
+  font-family: sans-serif, "Poppins";
+  font-size: 18px;
+}
+
+body {
+  margin: 0px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.huddle-icon {
+  padding-left: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+a:has(> .try-it-button) {
+  justify-self: flex-end;
+  margin-left: auto;
+}
+
+.try-it-button {
+  border-radius: 40px;
+  padding: 10px 50px;
+  margin-right: 20px;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: hsl(208, 11%, 55%);
+  background-color: white;
+  border: 0px;
+  border-color: hsl(193, 100%, 96%);
+  box-shadow: 0px 0px 5px hsla(209, 11%, 55%, 0.24);
+}
+
+.main-section {
+  background-image: url("../img/bg-hero-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: hsl(193, 100%, 96%);
+}/*# sourceMappingURL=styles.css.map */
