@@ -105,7 +105,7 @@ a:has(> .try-it-button) {
     grid-template-rows: 1fr;
     grid-template-areas: 
     "article" "image";
-    column-gap: 40px;
+    column-gap: 30px;
 }
 
 .section-I > article {
@@ -126,6 +126,7 @@ a:has(> .try-it-button) {
 .section-I > div {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .section-I > div > img {
