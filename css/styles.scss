@@ -65,7 +65,7 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: $very_pale_cyan;
-    padding: $padding_5;
+    padding: $padding_4;
 }
 
 .navbar {
@@ -74,7 +74,8 @@ p {
 }
 
 .huddle-icon {
-    max-width: 100%;
+    max-width: min(40%, 200px);
+    min-width: 100px;
     height: auto;
 }
 
@@ -86,7 +87,6 @@ a:has(> .try-it-button) {
 .try-it-button {
     border-radius: $border_rounded_5;
     padding: $padding_2 + 2px $padding_6 + 5px;
-    margin-right: $padding_3;
 
     font-family: $sans_font;
     font-weight: $sans_weight;
@@ -109,7 +109,7 @@ a:has(> .try-it-button) {
 }
 
 .section-I > article {
-    grid-area: "article";
+    grid-area: article;
     display: flex;
     align-items: center;
 }
@@ -127,10 +127,99 @@ a:has(> .try-it-button) {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    /*min-height: 100vh;*/
+    width: 100%;
+    max-width: 1110px;
 }
 
 .section-I > div > img {
-    grid-area: "image";
+    grid-area: image;
     max-width: min(600px, 100%);
     height: auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-II {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*min-height: 100vh;*/
+    width: 100%;
+    max-width: 1110px;
+}
+
+.section-II > div > img {
+    grid-area: image;
+    max-width: min(600px, 100%);
+    height: auto;
+}
+.section-III {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*min-height: 100vh;*/
+    width: 100%;
+    max-width: 1110px;
+}
+.section-III > div > img {
+    grid-area: image;
+    max-width: min(600px, 100%);
+    height: auto;
+}
+.section-IV {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*min-height: 100vh;*/
+    width: 100%;
+    max-width: 1110px;
+}
+.section-IV > div > img {
+    grid-area: image;
+    max-width: min(600px, 100%);
+    height: auto;
+}
+ul {
+    align-items: center;
+}
+li {
+    list-style: none;
+}
+@media (max-width: 900px) {
+    .section-I {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "article" 
+        "image";
+        row-gap: 30px;
+        margin: $margin_5 $margin_2; 
+    }
+
+    .section-I > article > div {
+        text-align: center;
+    }
+
+    .section-I > div > img {
+        max-width: min(500px, 100%);
+    }
+}
+
+@media (max-width: 400px) {
+    .try-it-button {
+        padding: $padding_2 $padding_3;
+    }
+
+    .main-section {
+        padding: $padding_4 $padding_3;
+    }
 }
