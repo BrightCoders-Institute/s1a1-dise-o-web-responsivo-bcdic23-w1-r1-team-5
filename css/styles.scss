@@ -52,7 +52,9 @@ body {
 }
 
 h1 {
+    font-weight: $sans_weight;
     line-height: $line_height;
+    font-size: $font_size * 2;
 }
 
 p {
@@ -60,12 +62,17 @@ p {
     line-height: $line_height;
 }
 
-.main-section {
+.header-background {
     background-image: url("../img/bg-hero-desktop.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: $very_pale_cyan;
-    padding: $padding_4;
+}
+
+.main-section {
+    max-width: 2000px;
+    margin: 0px auto;
+    padding: $padding_4 $padding_5;
 }
 
 .navbar {
@@ -99,7 +106,7 @@ a:has(> .try-it-button) {
 }
 
 .section-I {
-    margin: $margin_5;
+    margin: $margin_5 + $margin_2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
@@ -112,9 +119,11 @@ a:has(> .try-it-button) {
     grid-area: article;
     display: flex;
     align-items: center;
+    padding-left: $padding_3;
 }
 
 .get-started {
+    margin-top: $margin_2;
     border-radius: $border_rounded_5;
     padding: $padding_2 + 5px $padding_6 + 5px;
     border: 0px;
@@ -128,9 +137,11 @@ a:has(> .try-it-button) {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /*min-height: 100vh;*/
+    /*
+    min-height: 100vh;
     width: 100%;
     max-width: 1110px;
+    */
 }
 
 .section-I > div > img {
@@ -140,7 +151,7 @@ a:has(> .try-it-button) {
 }
 
 .container {
-    padding: $padding_6 + $padding_3 $padding_6 + $padding_2;
+    padding: $padding_6 * 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,14 +164,15 @@ a:has(> .try-it-button) {
     justify-content: center;
     flex-direction: column;
     /*min-height: 100vh;*/
+    max-width: 1200px;
     margin-bottom: $margin_4;
-    padding: $padding_5 $padding_3 $padding_5 $padding_6 + 30px;
+    padding: $padding_6 $padding_5 $padding_6 $padding_6 + 50px;
     border-radius: $border_rounded_2;
     box-shadow: 0px 0px 4px 4px $transparent_grayish_blue;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-column-gap: 30px;
+    grid-column-gap: 20px;
 }
 
 .section-norm {
@@ -190,6 +202,7 @@ a:has(> .try-it-button) {
 .text > h2 {
     color: black;
     margin-bottom: 0px;
+    font-size: $font_size + 10px;
 }
 
 .box {
@@ -202,14 +215,6 @@ a:has(> .try-it-button) {
     grid-area: image;
     max-width: min(350px, 100%);
     height: auto;
-}
-
-.box h1 {
-    font-size: 45px;
-}
-
-p {
-    font-size: 0.8rem;
 }
 
 ul {
@@ -272,7 +277,24 @@ footer {
     right: 30px;
 }
 
+@media (max-width: 1180px) {
+    .section {
+        padding: $padding_6 $padding_5 $padding_6 $padding_6;
+        column-gap: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .section-I {
+        margin: $margin_5 + $margin_2 $margin_3;
+    }
+}
+
 @media (max-width: 900px) {
+    h1 {
+        font-size: $font_size + 8px;
+    }
+    
     .section-I {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr / 2;
@@ -281,6 +303,10 @@ footer {
         "image";
         row-gap: 30px;
         margin: $margin_5 $margin_2; 
+    }
+
+    .section-I > article {
+        padding-left: 0px;
     }
 
     .section-I > article > div {
@@ -307,10 +333,17 @@ footer {
 
     .text > h2 {
         margin-top: $margin_5 + $margin_3;
+        font-size: $font_size + 4px;
     }
 
     .box {
         justify-content: center !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .container {
+        padding: $padding_6 + $padding_3 $padding_4;
     }
 }
 
@@ -320,15 +353,15 @@ footer {
         padding: $padding_4 $padding_3;
     }
 
+    .section-I {
+        margin: $margin_4 $margin_2 $margin_3 $margin_2;
+    }
+
     .try-it-button {
         padding: $padding_2 $padding_3;
     }
 
     .get-started {
         padding: $padding_2 + 5px $padding_3 + 5px;
-    }
-
-    .container {
-        padding: $padding_6 + $padding_3 $padding_4;
     }
 }

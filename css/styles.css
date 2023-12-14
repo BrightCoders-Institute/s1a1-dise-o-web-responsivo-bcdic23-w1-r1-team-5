@@ -13,7 +13,9 @@ body {
 }
 
 h1 {
+  font-weight: 600;
   line-height: 1.5;
+  font-size: 36px;
 }
 
 p {
@@ -21,12 +23,17 @@ p {
   line-height: 1.5;
 }
 
-.main-section {
+.header-background {
   background-image: url("../img/bg-hero-desktop.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: hsl(193, 100%, 96%);
-  padding: 30px;
+}
+
+.main-section {
+  max-width: 2000px;
+  margin: 0px auto;
+  padding: 30px 40px;
 }
 
 .navbar {
@@ -58,7 +65,7 @@ a:has(> .try-it-button) {
 }
 
 .section-I {
-  margin: 40px;
+  margin: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -71,9 +78,11 @@ a:has(> .try-it-button) {
   grid-area: article;
   display: flex;
   align-items: center;
+  padding-left: 20px;
 }
 
 .get-started {
+  margin-top: 10px;
   border-radius: 40px;
   padding: 15px 55px;
   border: 0px;
@@ -87,9 +96,11 @@ a:has(> .try-it-button) {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /*min-height: 100vh;*/
+  /*
+  min-height: 100vh;
   width: 100%;
   max-width: 1110px;
+  */
 }
 
 .section-I > div > img {
@@ -99,7 +110,7 @@ a:has(> .try-it-button) {
 }
 
 .container {
-  padding: 70px 60px;
+  padding: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,14 +123,15 @@ a:has(> .try-it-button) {
   justify-content: center;
   flex-direction: column;
   /*min-height: 100vh;*/
+  max-width: 1200px;
   margin-bottom: 30px;
-  padding: 40px 20px 40px 80px;
+  padding: 50px 40px 50px 100px;
   border-radius: 10px;
   box-shadow: 0px 0px 4px 4px rgba(128, 141, 153, 0.116);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-column-gap: 30px;
+  grid-column-gap: 20px;
 }
 
 .section-norm {
@@ -147,6 +159,7 @@ a:has(> .try-it-button) {
 .text > h2 {
   color: black;
   margin-bottom: 0px;
+  font-size: 28px;
 }
 
 .box {
@@ -159,14 +172,6 @@ a:has(> .try-it-button) {
   grid-area: image;
   max-width: min(350px, 100%);
   height: auto;
-}
-
-.box h1 {
-  font-size: 45px;
-}
-
-p {
-  font-size: 0.8rem;
 }
 
 ul {
@@ -227,13 +232,31 @@ footer {
   right: 30px;
 }
 
+@media (max-width: 1180px) {
+  .section {
+    padding: 50px 40px 50px 50px;
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+  }
+}
+@media (max-width: 1000px) {
+  .section-I {
+    margin: 50px 20px;
+  }
+}
 @media (max-width: 900px) {
+  h1 {
+    font-size: 26px;
+  }
   .section-I {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr/2;
     grid-template-areas: "article" "image";
     row-gap: 30px;
     margin: 40px 10px;
+  }
+  .section-I > article {
+    padding-left: 0px;
   }
   .section-I > article > div {
     text-align: center;
@@ -253,9 +276,15 @@ footer {
   }
   .text > h2 {
     margin-top: 60px;
+    font-size: 22px;
   }
   .box {
     justify-content: center !important;
+  }
+}
+@media (max-width: 620px) {
+  .container {
+    padding: 70px 30px;
   }
 }
 @media (max-width: 400px) {
@@ -263,13 +292,13 @@ footer {
     background-image: url("../img/bg-hero-mobile.svg");
     padding: 30px 20px;
   }
+  .section-I {
+    margin: 30px 10px 20px 10px;
+  }
   .try-it-button {
     padding: 10px 20px;
   }
   .get-started {
     padding: 15px 25px;
-  }
-  .container {
-    padding: 70px 30px;
   }
 }/*# sourceMappingURL=styles.css.map */
