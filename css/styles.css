@@ -62,7 +62,7 @@ a:has(> .try-it-button) {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  grid-template-areas: "article" "image";
+  grid-template-areas: "article image";
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
@@ -99,57 +99,74 @@ a:has(> .try-it-button) {
 }
 
 .container {
+  padding: 70px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.section-II {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  /*min-height: 100vh;*/
-  width: 100%;
-  max-width: 1110px;
-}
-
-.section-II > div > img {
-  grid-area: image;
-  max-width: min(600px, 100%);
-  height: auto;
-}
-
-.section-III {
+.section {
+  /*
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   /*min-height: 100vh;*/
-  width: 100%;
-  max-width: 1110px;
+  margin-bottom: 30px;
+  padding: 40px 20px 40px 80px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 4px rgba(128, 141, 153, 0.116);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
 }
 
-.section-III > div > img {
-  grid-area: image;
-  max-width: min(600px, 100%);
-  height: auto;
+.section-norm {
+  grid-template-areas: "text box";
 }
 
-.section-IV {
+.section-norm > .box {
+  justify-content: end;
+}
+
+.section-alt {
+  grid-template-areas: "box text";
+}
+
+.section-alt > .box {
+  justify-content: start;
+}
+
+.text {
+  grid-area: text;
+  color: hsl(208, 11%, 55%);
+  align-self: center;
+}
+
+.text > h2 {
+  color: black;
+  margin-bottom: 0px;
+}
+
+.box {
+  grid-area: box;
+  width: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  /*min-height: 100vh;*/
-  width: 100%;
-  max-width: 1110px;
 }
 
-.section-IV > div > img {
+.box > img {
   grid-area: image;
-  max-width: min(600px, 100%);
+  max-width: min(350px, 100%);
   height: auto;
+}
+
+.box h1 {
+  font-size: 45px;
+}
+
+p {
+  font-size: 0.8rem;
 }
 
 ul {
@@ -160,10 +177,60 @@ li {
   list-style: none;
 }
 
+footer {
+  align-items: center;
+  background: hsl(192, 100%, 9%);
+  color: white;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  padding: 150px 70px 70px 70px;
+  position: relative;
+}
+
+.footer-page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "col-1 col-2 col-3 col-4";
+  /*grid-template-areas: 
+  "col-1"
+  "col-2"
+  "col-3"
+  "col-4";*/
+}
+
+.col-1 {
+  grid-area: col-1;
+}
+
+.col-2 {
+  grid-area: col-2;
+}
+
+.col-3 {
+  grid-area: col-3;
+}
+
+.col-4 {
+  grid-area: col-4;
+}
+
+.logo {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(66deg) brightness(106%) contrast(102%);
+}
+
+.copyright {
+  bottom: 30px;
+  font-size: 12px;
+  position: absolute;
+  right: 30px;
+}
+
 @media (max-width: 900px) {
   .section-I {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr/2;
     grid-template-areas: "article" "image";
     row-gap: 30px;
     margin: 40px 10px;
@@ -174,12 +241,35 @@ li {
   .section-I > div > img {
     max-width: min(500px, 100%);
   }
+  .section {
+    padding: 40px 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr/2;
+    grid-template-areas: "box" "text";
+    margin-bottom: 40px;
+  }
+  .text {
+    text-align: center;
+  }
+  .text > h2 {
+    margin-top: 60px;
+  }
+  .box {
+    justify-content: center !important;
+  }
 }
 @media (max-width: 400px) {
+  .main-section {
+    background-image: url("../img/bg-hero-mobile.svg");
+    padding: 30px 20px;
+  }
   .try-it-button {
     padding: 10px 20px;
   }
-  .main-section {
-    padding: 30px 20px;
+  .get-started {
+    padding: 15px 25px;
+  }
+  .container {
+    padding: 70px 30px;
   }
 }/*# sourceMappingURL=styles.css.map */

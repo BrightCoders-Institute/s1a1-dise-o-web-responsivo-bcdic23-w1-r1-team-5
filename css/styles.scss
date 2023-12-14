@@ -104,7 +104,7 @@ a:has(> .try-it-button) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-template-areas: 
-    "article" "image";
+    "article image";
     column-gap: 30px;
 }
 
@@ -139,65 +139,143 @@ a:has(> .try-it-button) {
     height: auto;
 }
 
-.container{
+.container {
+    padding: $padding_6 + $padding_3 $padding_6 + $padding_2;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.section-II {
+.section {
+    /*
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     /*min-height: 100vh;*/
-    width: 100%;
-    max-width: 1110px;
+    margin-bottom: $margin_4;
+    padding: $padding_5 $padding_3 $padding_5 $padding_6 + 30px;
+    border-radius: $border_rounded_2;
+    box-shadow: 0px 0px 4px 4px $transparent_grayish_blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
 }
 
-.section-II > div > img {
-    grid-area: image;
-    max-width: min(600px, 100%);
-    height: auto;
+.section-norm {
+    grid-template-areas: 
+    "text box";
 }
-.section-III {
+
+.section-norm > .box {
+    justify-content: end;
+}
+
+.section-alt {
+    grid-template-areas: 
+    "box text";
+}
+
+.section-alt > .box {
+    justify-content: start;
+}
+
+.text {
+    grid-area: text;
+    color: $grayish_blue;
+    align-self: center;
+}
+
+.text > h2 {
+    color: black;
+    margin-bottom: 0px;
+}
+
+.box {
+    grid-area: box;
+    width: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    /*min-height: 100vh;*/
-    width: 100%;
-    max-width: 1110px;
 }
-.section-III > div > img {
+
+.box > img {
     grid-area: image;
-    max-width: min(600px, 100%);
+    max-width: min(350px, 100%);
     height: auto;
 }
-.section-IV {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    /*min-height: 100vh;*/
-    width: 100%;
-    max-width: 1110px;
+
+.box h1 {
+    font-size: 45px;
 }
-.section-IV > div > img {
-    grid-area: image;
-    max-width: min(600px, 100%);
-    height: auto;
+
+p {
+    font-size: 0.8rem;
 }
+
 ul {
     align-items: center;
 }
+
 li {
     list-style: none;
 }
+
+footer {
+    align-items: center;
+    background: hsl(192, 100%, 9%);
+    color: white;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    padding: 150px 70px 70px 70px;
+    position: relative;
+}
+
+.footer-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "col-1 col-2 col-3 col-4";
+
+    /*grid-template-areas: 
+    "col-1"
+    "col-2"
+    "col-3"
+    "col-4";*/
+}
+
+.col-1 {
+    grid-area: col-1;
+}
+
+.col-2 {
+    grid-area: col-2;
+}
+
+.col-3 {
+    grid-area: col-3;
+}
+
+.col-4 {
+    grid-area: col-4;
+}
+
+.logo {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(66deg) brightness(106%) contrast(102%);
+}
+
+.copyright {
+    bottom: 30px;
+    font-size: 12px;
+    position: absolute;
+    right: 30px;
+}
+
 @media (max-width: 900px) {
     .section-I {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr / 2;
         grid-template-areas: 
         "article" 
         "image";
@@ -212,14 +290,45 @@ li {
     .section-I > div > img {
         max-width: min(500px, 100%);
     }
+    
+    .section {
+        padding: $padding_5 $padding_4;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr / 2;
+        grid-template-areas: 
+        "box" 
+        "text";
+        margin-bottom: $margin_5;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .text > h2 {
+        margin-top: $margin_5 + $margin_3;
+    }
+
+    .box {
+        justify-content: center !important;
+    }
 }
 
 @media (max-width: 400px) {
+    .main-section {
+        background-image: url("../img/bg-hero-mobile.svg");
+        padding: $padding_4 $padding_3;
+    }
+
     .try-it-button {
         padding: $padding_2 $padding_3;
     }
 
-    .main-section {
-        padding: $padding_4 $padding_3;
+    .get-started {
+        padding: $padding_2 + 5px $padding_3 + 5px;
+    }
+
+    .container {
+        padding: $padding_6 + $padding_3 $padding_4;
     }
 }
