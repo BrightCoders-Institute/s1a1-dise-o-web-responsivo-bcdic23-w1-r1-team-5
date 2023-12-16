@@ -1,18 +1,19 @@
 ![BrightCoders Logo](img/logo.jpg)
 
-# Diseño web
+# Reto de diseño web
 
-> [⚠️ Antes de iniciar debes leer las instrucciones](./instructions.md)
+_**Descripción general:**
+Página web replicada bajo la dinámica de trabajo Mob Programming_
 
-This README would normally document whatever steps are necessary to get the application up and running.
+## 📋 Tabla de contenido
+- Proyecto en GitHub Pages
+- Créditos
 
-Things you may want to cover:
+## 🚀 Proyecto en GitHub Pages
+**[Liga de acceso a la página](https://brightcoders-institute.github.io/s1a1-dise-o-web-responsivo-bcdic23-w1-r1-team-5/)**
 
-- Title or Project Name
-- Table of contents
-- Description. A brief description of what the project is about
-- How to Install and Run the Project.
-- How to Use the Project.
-- Credits
-- Badges
-  
+## Créditos
+- **[LuisChavez2023](https://github.com/luischavez2023)**
+- **[ErikGmz](https://github.com/ErikGmz)**
+- **[alandin1](https://github.com/alandin1)**
+- **[luiandre13](https://github.com/luiandre13)**
